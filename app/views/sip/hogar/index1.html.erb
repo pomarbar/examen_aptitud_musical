@@ -145,9 +145,9 @@
 		function escucharGrabacion(e) {
 		  var audio = document.getElementById('audio');
 		  // e.data contiene un objeto 'blob' con los datos del audio
-      audio.src = URL.createObjectURL(e.data);
-      // window.grabus tendra ultima grabacion del usuario
-      window.grabus = e.data
+      		  audio.src = URL.createObjectURL(e.data);
+      		  // window.grabus tendra ultima grabacion del usuario
+      		  window.grabus = e.data
 		  audio.play();
 		}
 		
