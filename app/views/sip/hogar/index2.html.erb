@@ -190,8 +190,26 @@
 				audio = rutaAudio[indexGrupo] + listaAudios[indexGrupo][index];
 				marcaEjercicio = [0,0,0,0,0];
 				sumaUno(index, marcaEjercicio);
+				
+				console.log(audio);
+    				// https://stackoverflow.com/questions/13333378/how-can-javascript-upload-a-blob
+          			//debugger
+          			var fd = new FormData();
+          			fd.append('fname', 'test.wav');
+          			fd.append('data', window.grabus);
+          			fd.append('index', index);
+          			fd.append('ejercicio', 1);
+          			$.ajax({
+            			  type: 'POST',
+            			  url: '/reciberesp.json',
+            			  data: fd,
+            			  processData: false,
+            			  contentType: false
+            			  }).done(function(data) {
+              			  console.log(data);
+          			});
 			} else{
-				avanzar('index3.html');
+				avanzar(3);
 			};
 		}
 	</script>
